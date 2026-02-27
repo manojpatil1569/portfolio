@@ -3,190 +3,314 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Manoj Patil - Front-End Developer</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <title>Manoj Patil — Front-End Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <nav class="nav-container" aria-label="Main navigation">
-      <div class="logo">
-        <h1>Manoj Patil</h1>
-      </div>
+
+  <!-- Cursor glow -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- Navigation -->
+  <header id="header">
+    <nav class="nav-container">
+      <div class="logo">MP<span class="logo-dot">.</span></div>
       <ul class="nav-links">
         <li><a href="#home" class="nav-link">Home</a></li>
         <li><a href="#about" class="nav-link">About</a></li>
         <li><a href="#projects" class="nav-link">Projects</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
+      <button class="menu-toggle" aria-label="Toggle menu" id="menuToggle">
+        <span></span><span></span><span></span>
+      </button>
     </nav>
   </header>
 
   <main>
-  
-    <section id="home" class="hero-container">
-      <div class="hero-content">
-        <h1>Front-end Developer & UI Designer</h1>
-        <p class="hero-intro">Building beautiful, responsive web experiences</p>
-        <div class="hero-cta">
-          <a href="#projects" class="btn">View My Work</a>
+
+    <!-- Hero -->
+    <section id="home" class="hero">
+      <div class="hero-bg">
+        <div class="hero-blob blob-1"></div>
+        <div class="hero-blob blob-2"></div>
+        <div class="grid-overlay"></div>
+      </div>
+      <div class="hero-inner">
+        <div class="hero-text">
+          <p class="hero-eyebrow reveal">Available for work · Pune, India</p>
+          <h1 class="hero-title reveal">
+            <span class="line">Front-End</span>
+            <span class="line italic">Developer</span>
+            <span class="line">& UI Designer</span>
+          </h1>
+          <p class="hero-sub reveal">I craft beautiful, fast, and accessible web experiences that people actually enjoy using.</p>
+          <div class="hero-actions reveal">
+            <a href="#projects" class="btn-primary">See My Work <i class="fas fa-arrow-right"></i></a>
+            <a href="#contact" class="btn-ghost">Let's Talk</a>
+          </div>
+        </div>
+        <div class="hero-photo reveal">
+          <div class="photo-frame">
+            <img src="my-profile.png" alt="Manoj Patil">
+            <div class="photo-badge">
+              <span class="badge-dot"></span> Open to opportunities
+            </div>
+          </div>
         </div>
       </div>
-      <div class="hero-image">
-        <img src="my-profile.png" alt="Profile Picture" class="profile-pic">
+      <div class="hero-scroll">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
       </div>
     </section>
-    
 
-    <!-- About Section -->
+    <!-- About -->
     <section id="about" class="about section">
-      <h2 class="section-title">About Me</h2>
-      <div class="about-container">
-        <div class="about-content">
-          <h3>Hi, I'm Manoj</h3>
-          <p class="intro">I'm a passionate web developer with expertise in HTML, CSS, and JavaScript.</p>
-          <p>I'm dedicated to creating beautiful, responsive websites that solve complex problems with simple, intuitive solutions. With a keen eye for design and a strong foundation in front-end technologies, I strive to deliver high-quality web experiences that engage users and meet business objectives.</p><br>
-          <a href="#" class="btn">Download Resume</a>
+      <div class="section-inner">
+        <div class="about-left reveal">
+          <span class="section-tag">About Me</span>
+          <h2 class="section-title">Hi, I'm Manoj<br><em>Patil.</em></h2>
+          <p class="about-text">I'm a passionate front-end developer with a strong eye for design. I build responsive websites that are as beautiful as they are functional — bridging the gap between design and code with precision and care.</p>
+          <p class="about-text">I believe the best digital experiences feel effortless. Every pixel, interaction, and line of code should serve the user.</p>
+          <a href="#" class="btn-primary" style="margin-top:1.5rem">
+            <i class="fas fa-download"></i> Download CV
+          </a>
         </div>
-        <div class="skills-container">
-          <h3>My Skills</h3>
-          <ul class="skills" aria-label="List of skills">
-            <li class="skill-item">HTML5</li>
-            <li class="skill-item">CSS3</li>
-            <li class="skill-item">JavaScript</li>
-            <li class="skill-item">Responsive Design</li>
-            <li class="skill-item">UI/UX Design</li>
-            <li class="skill-item">Web Accessibility</li>
-            <li class="skill-item">Git</li>
-            <li class="skill-item">Bootstrap</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects-section section">
-      <h2 class="section-title">My Projects</h2>
-      <div class="projects-grid">
-        <!-- Project Card 1 -->
-        <div class="project-card">
-          <img src="cart.jpg" alt="Shopping Cart Project" class="project-image">
-          <div class="project-content">
-            <h3>Shopping Cart</h3>
-            <p class="project-description">A dynamic shopping cart built using HTML, CSS, and JavaScript, allowing users to add, remove, and manage items with real-time price updates.</p>
-            <a href="#" class="project-link">View Project</a>
+        <div class="about-right reveal">
+          <div class="skills-wrap">
+            <h3 class="skills-label">Tech Stack</h3>
+            <div class="skills-grid">
+              <div class="skill-chip"><i class="fab fa-html5"></i> HTML5</div>
+              <div class="skill-chip"><i class="fab fa-css3-alt"></i> CSS3</div>
+              <div class="skill-chip"><i class="fab fa-js"></i> JavaScript</div>
+              <div class="skill-chip"><i class="fas fa-mobile-alt"></i> Responsive</div>
+              <div class="skill-chip"><i class="fas fa-pencil-ruler"></i> UI/UX</div>
+              <div class="skill-chip"><i class="fas fa-universal-access"></i> Accessibility</div>
+              <div class="skill-chip"><i class="fab fa-git-alt"></i> Git</div>
+            </div>
           </div>
-        </div>
-        
-        <!-- Project Card 2 -->
-        <div class="project-card">
-          <img src="ytbg.jpg" alt="YouTube Clone Project" class="project-image">
-          <div class="project-content">
-            <h3>YouTube Webpage</h3>
-            <p class="project-description">A responsive YouTube-inspired web page featuring video thumbnails, a search bar, and interactive elements for a seamless user experience.</p>
-            <a href="#" class="project-link">View Project</a>
-          </div>
-        </div>
-        
-        <!-- Project Card 3 -->
-        <div class="project-card">
-          <img src="dashboard.jpg" alt="Price Dashboard Project" class="project-image">
-          <div class="project-content">
-            <h3>Price Dashboard</h3>
-            <p class="project-description">A real-time price dashboard displaying dynamic data visualizations with interactive filters and a clean, responsive design.</p>
-            <a href="#" class="project-link">View Project</a>
+          <div class="stats-row">
+            <div class="stat"><span class="stat-num">3+</span><span class="stat-label">Projects Built</span></div>
+            <div class="stat"><span class="stat-num">1+</span><span class="stat-label">Years Learning</span></div>
+            <div class="stat"><span class="stat-num">8</span><span class="stat-label">Skills Mastered</span></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section section">
-      <h2 class="section-title">Contact Me</h2>
-      <div class="contact-content">
-        <form class="contact-form">
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required>
+    <!-- Projects -->
+    <section id="projects" class="projects section">
+      <div class="section-inner">
+        <div class="section-header reveal">
+          <span class="section-tag">Work</span>
+          <h2 class="section-title">Selected<br><em>Projects</em></h2>
+        </div>
+        <div class="projects-list">
+
+          <div class="project-item reveal">
+            <div class="project-img-wrap">
+              <img src="game.jpeg" alt="Landing Page" class="project-img">
+              <div class="project-overlay">
+                <a href="https://manojpatil1569.github.io/gamelandingpage/" class="overlay-btn">View Project <i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+            <div class="project-info">
+              <span class="project-num">01</span>
+              <h3 class="project-name">Game Landing Page</h3>
+              <p class="project-desc">Created a responsive landing page using semantic HTML and modern CSS Added interactive UI elements using JavaScript
+event handling Focused on layout structure, performance, and user interaction</p>
+              <div class="project-tags">
+                <span>HTML</span><span>CSS</span><span>JavaScript</span>
+              </div>
+              <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
+
+          <div class="project-item project-item--reverse reveal">
+            <div class="project-img-wrap">
+              <img src="dailyflow.png" alt="Dayflow-Tracker" class="project-img">
+              <div class="project-overlay">
+                <a href="https://manojpatil1569.github.io/TodoxTracking/" class="overlay-btn">View Project <i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+            <div class="project-info">
+              <span class="project-num">02</span>
+              <h3 class="project-name">DayFlow</h3>
+              <p class="project-desc">Built a task management application supporting task creation, update, and deletion Applied modular JavaScript for
+maintainable and readable code Ensured responsive design for cross-device compatibility</p>
+              <div class="project-tags">
+                <span>HTML</span><span>CSS</span><span>JavaScript</span>
+              </div>
+              <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="subject">Subject</label>
-            <input type="text" id="subject" name="subject" required>
+
+          <div class="project-item reveal">
+            <div class="project-img-wrap">
+              <img src="aurapixel.jpg" alt="AuraPixels" class="project-img">
+              <div class="project-overlay">
+                <a href="https://manojpatil1569.github.io/AuraPixels/" class="overlay-btn">View Project <i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+            <div class="project-info">
+              <span class="project-num">03</span>
+              <h3 class="project-name">AuraPixels</h3>
+              <p class="project-desc">Create a responsive wallpaper website using HTML, CSS, and JavaScript with modern UI design and mobile-friendly layouts.</p>
+              <div class="project-tags">
+                <span>HTML</span><span>CSS</span><span>JavaScript</span>
+              </div>
+              <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" required></textarea>
-          </div>
-          <button type="submit">Send Message</button>
-        </form>
+
+        </div>
       </div>
     </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact section">
+      <div class="section-inner">
+        <div class="contact-left reveal">
+          <span class="section-tag">Contact</span>
+          <h2 class="section-title">Let's build<br><em>something great.</em></h2>
+          <p class="contact-sub">Have a project in mind or just want to say hi? My inbox is always open.</p>
+          <div class="contact-info-list">
+            <a href="mailto:mp4920580@gmail.com" class="contact-info-item">
+              <i class="fas fa-envelope"></i>
+              <span>mp4920580@gmail.com</span>
+            </a>
+            <a href="tel:+917038557304" class="contact-info-item">
+              <i class="fas fa-phone"></i>
+              <span>+91 70385 57304</span>
+            </a>
+            <div class="contact-info-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Pune, India</span>
+            </div>
+          </div>
+          <div class="social-links">
+            <a href="#" aria-label="GitHub" class="social-icon"><i class="fab fa-github"></i></a>
+            <a href="#" aria-label="LinkedIn" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Twitter" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram" class="social-icon"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="contact-right reveal">
+          <form class="contact-form" id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="What's this about?" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+            </div>
+            <button type="submit" class="btn-primary form-submit">
+              Send Message <i class="fas fa-paper-plane"></i>
+            </button>
+            <div class="form-success" id="formSuccess">
+              <i class="fas fa-check-circle"></i> Message sent! I'll get back to you soon.
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
   </main>
 
+  <!-- Footer -->
   <footer class="footer">
-    <div class="footer-container">
-      <div class="about-section">
-        <h3>About</h3>
-        <p>Manoj Patil</p>
-        <p>Front-end Developer & UI Designer based in India, passionate about creating beautiful and functional web experiences.</p>
-      </div>
-      
-      <div class="contact">
-        <h3>Contact</h3>
-        <p>Email: mp4920580@gmail.com</p>
-        <p>Phone: +91 7038557304</p>
-        <p>Location: Pune, India</p>
-      </div>
-      
-      <div class="social-section">
-        <h3>Connect With Me</h3>
-        <div class="social-links">
-          <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        </div>
-      </div>
-      
-      <div class="copyright">
-        <p>&copy; 2025 Manoj Patil. All rights reserved.</p>
-      </div>
+    <div class="footer-inner">
+      <div class="footer-logo">MP<span class="logo-dot">.</span></div>
+      <p class="footer-tagline">Front-End Developer & UI Designer · Pune, India</p>
+      <p class="footer-copy">&copy; 2025 Manoj Patil. All rights reserved.</p>
     </div>
   </footer>
 
   <script>
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 60,
-            behavior: 'smooth'
-          });
-        }
+    // Cursor glow
+    const glow = document.getElementById('cursorGlow');
+    document.addEventListener('mousemove', e => {
+      glow.style.left = e.clientX + 'px';
+      glow.style.top = e.clientY + 'px';
+    });
+
+    // Mobile menu
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.querySelector('.nav-links');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      menuToggle.classList.toggle('active');
+    });
+
+    // Close menu on link click
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuToggle.classList.remove('active');
       });
     });
 
-    // Simple form validation
-    const contactForm = document.querySelector('.contact-form');
-    if (contactForm) {
-      contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        // Here you would typically add code to send the form data
-        // For demo purposes, we'll just show an alert
-        alert('Thank you for your message! I will get back to you soon.');
-        this.reset();
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
       });
-    }
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+
+    // Header scroll
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    // Form
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('formSuccess').classList.add('show');
+      this.reset();
+      setTimeout(() => document.getElementById('formSuccess').classList.remove('show'), 5000);
+    });
+
+    // Active nav link
+    const sections = document.querySelectorAll('section');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 100) current = s.getAttribute('id');
+      });
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+      });
+    });
   </script>
 </body>
 </html>
