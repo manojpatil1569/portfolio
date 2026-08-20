@@ -443,9 +443,7 @@ header.scrolled {
   100% { transform: scaleY(0); transform-origin: bottom; }
 }
 
-/* ===========================
-   ABOUT
-   =========================== */
+
 .about { background: var(--bg2); }
 
 .section-inner.about-inner,
@@ -553,8 +551,8 @@ header.scrolled {
 
 .project-item {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 2.5rem;
   align-items: center;
 }
 .project-item--reverse { direction: rtl; }
@@ -564,12 +562,19 @@ header.scrolled {
   position: relative;
   border-radius: var(--radius);
   overflow: hidden;
-  aspect-ratio: 16/10;
+  width: min(100%, 520px);
+  height: 320px;
+  justify-self: center;
+  background: var(--surface2);
+}
+.project-info {
+  max-width: 720px;
 }
 .project-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
   transition: transform 0.5s ease;
 }
 .project-img-wrap:hover .project-img { transform: scale(1.05); }
@@ -645,6 +650,74 @@ header.scrolled {
   transition: var(--transition);
 }
 .project-link:hover { gap: 0.8rem; }
+
+/* ===========================
+   EXPERIENCE
+   =========================== */
+.experience { background: var(--bg2); }
+.experience-layout {
+  display: grid;
+  grid-template-columns: 1.35fr 0.65fr;
+  gap: 2rem;
+  align-items: start;
+  min-width: 0;
+}
+.experience-card,
+.certification-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.experience-card { padding: 2rem; }
+.experience-card,
+.certification-card { min-width: 0; }
+.experience-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.experience-type {
+  display: block;
+  color: var(--primary);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+.experience-role {
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 1.65rem;
+  margin-bottom: 0.25rem;
+  overflow-wrap: anywhere;
+}
+.experience-company,
+.experience-date,
+.certification-card p { color: var(--text-muted); font-size: 0.9rem; }
+.experience-date { white-space: nowrap; padding-top: 0.2rem; }
+.experience-list {
+  display: grid;
+  gap: 0.85rem;
+  padding: 1.5rem 0 0 1.1rem;
+  color: var(--text-muted);
+}
+.experience-list li { padding-left: 0.35rem; }
+.experience-list li::marker { color: var(--primary); }
+.certifications { display: grid; gap: 1rem; }
+.certifications > .experience-type { margin-bottom: 0; }
+.certification-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.35rem;
+  transition: var(--transition);
+}
+.certification-card:hover { border-color: var(--primary); transform: translateY(-3px); }
+.certification-card > i { color: var(--primary); padding-top: 0.2rem; }
+.certification-card h3 { color: var(--white); font-size: 1rem; margin-bottom: 0.25rem; }
 
 /* ===========================
    CONTACT
@@ -825,6 +898,7 @@ header.scrolled {
   .photo-frame img { height: 320px; }
 
   .about .section-inner,
+  .experience-layout,
   .contact .section-inner {
     grid-template-columns: 1fr;
     gap: 3rem;
@@ -838,6 +912,8 @@ header.scrolled {
   .project-item--reverse { direction: ltr; }
 
   .stats-row { gap: 1rem; }
+  .experience-heading { flex-direction: column; gap: 0.75rem; }
+  .experience-date { white-space: normal; }
 }
 
 @media (max-width: 600px) {
@@ -861,4 +937,8 @@ header.scrolled {
   .section-title { font-size: 2rem; }
   .contact-form { padding: 1.5rem; }
   .stats-row { flex-direction: column; }
+  .experience-card { padding: 1.25rem; }
+  .experience-role { font-size: 1.4rem; }
+  .experience-list { padding-left: 1rem; font-size: 0.92rem; }
+  .certification-card { padding: 1.1rem; }
 }
